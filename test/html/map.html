@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<script language="JavaScript">
+function function1() {
+    var result;
+    try {
+        result = theJavaFunction(12, false, null, [3.6, ['swt', true]], 'eclipse');
+    } catch (e) {
+        alert('a java error occurred: ' + e.message);
+        return;
+    }
+    for (var i = 0; i < result.length; i++) {
+        alert('returned ' + i + ': ' + result[i]);
+    }
+}
+</script>
+</head>
+<body>
+<input id=button type="button" value="调用java方法" onclick="function1();">
+<p><a href="http://www.eclipse.org">go to eclipse.org</a>
+</body>
+</html>
