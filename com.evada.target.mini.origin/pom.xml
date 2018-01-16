@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.evada.target.mini.origin</artifactId>
+	<packaging>pom</packaging>
+	<groupId>com.evada.ide</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+	<properties>
+		<tycho-extras-version>0.23.0</tycho-extras-version>
+		<p2-site>http://192.168.3.245/p2</p2-site>
+		<plugins-loc>${project.build.directory}/../20150630</plugins-loc>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-eclipserun-plugin</artifactId>
+				<version>${tycho-extras-version}</version>
+				<configuration>
+					<argLine>-Declipse.p2.mirrors=false</argLine>
+					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher -nosplash -metadataRepository file:/${project.build.directory}/repository -artifactRepository file:/${project.build.directory}/repository -source ${plugins-loc} -publishArtifacts</appArgLine>
+					<dependencies>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.repository</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.touchpoint.natives</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.touchpoint.eclipse</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.artifact.repository
+							</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.director.app</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.publisher.eclipse</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.ds</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.core.net</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+					</dependencies>
+					<repositories>
+						<repository>
+							<id>an eclipse repository</id>
+							<layout>p2</layout>
+							<url>${p2-site}</url>
+						</repository>
+					</repositories>
+				</configuration>
+				<executions>
+					<execution>
+						<id>export repository</id>
+						<goals>
+							<goal>eclipse-run</goal>
+						</goals>
+						<!-- <phase>prepare-package</phase> -->
+						<phase>package</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,25 @@
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher
+   -metadataRepository file:/D:/repository
+   -artifactRepository file:/D:/repository
+   -source D:/NewWork/workspaces/InnoDE-git/com.evada.target.mini.origin/p2-mini
+   -publishArtifacts
+   
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher -metadataRepository file:/D:/repository -artifactRepository file:/D:/repository -source D:/NewWork/workspaces/InnoDE-git/com.evada.target.mini.origin/p2-mini -publishArtifacts
+
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher
+   -nosplash
+   -metadataRepository file:/D:/repository
+   -artifactRepository file:/D:/repository
+   -source D:/NewWork/workspaces/InnoDE-git/com.evada.target.mini.origin/p2-ext
+   -publishArtifacts
+   
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher -nosplash -metadataRepository file:/D:/repository -artifactRepository file:/D:/repository -source D:/NewWork/workspaces/InnoDE-git/com.evada.target.mini.origin/p2-ext -publishArtifacts
+
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher
+   -metadataRepository file:/D:/repository
+   -artifactRepository file:/D:/repository
+   -source E:/DL/source/BabelLanguagePack-eclipse-zh_4.5.0.v20150804081228_001/eclipse
+   -publishArtifacts
+   
+D:/NewWork/Eclipse/eclipse-java-mars-R-win32/eclipse.exe -application org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher -metadataRepository file:/D:/repository -artifactRepository file:/D:/repository -source E:/DL/source/BabelLanguagePack-eclipse-zh_4.5.0.v20150804081228_001/eclipse -publishArtifacts
+   
