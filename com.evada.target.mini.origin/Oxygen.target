@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Oxygen" sequenceNumber="1">
+<locations>
+<location path="${project_loc:/com.evada.target.mini.origin}/20170709" type="Directory"/>
+<location path="${project_loc:/com.evada.target.mini.origin}/BabelLanguagePack-eclipse-zh_4.6.0.v20161126060001/eclipse" type="Directory"/>
+<location path="${project_loc:/com.evada.target.mini.origin}/ext" type="Directory"/>
+</locations>
+</target>
