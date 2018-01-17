@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="DE" sequenceNumber="48">
+<locations>
+<location path="${workspace_loc}/com.evada.target.mini.origin/20150630/plugins" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/20150630/source" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/BabelLanguagePack" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/ecf-base/plugins" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/ecf-base/source" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/p2-ext/plugins" type="Directory"/>
+<location path="${workspace_loc}/com.evada.target.mini.origin/p2-ext/source" type="Directory"/>
+<location path="E:\git_workspaces\c_targetPlatform\20161207" type="Directory"/>
+</locations>
+</target>
