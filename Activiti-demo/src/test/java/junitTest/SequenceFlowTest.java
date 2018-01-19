@@ -1,5 +1,6 @@
 package junitTest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,12 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 import org.junit.Test;
 
+/**
+ * 连线设置条件 和节点设置assignee变量测试
+ * 
+ * @author dingqin 2018年1月19日
+ *
+ */
 public class SequenceFlowTest {
 
 	private ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
@@ -36,7 +43,12 @@ public class SequenceFlowTest {
 		ProcessDefinition processDefinition = processEngine.getRepositoryService().createProcessDefinitionQuery()
 				.processDefinitionKey("SequenceFlow").latestVersion().singleResult();
 		String deploymentId = processDefinition.getDeploymentId();
-		processEngine.getRuntimeService().startProcessInstanceByKey("SequenceFlow");
+		Map<String, Object> varMap = new HashMap<>();
+		List<String> names = new ArrayList<>();
+		names.add("张三");
+		names.add("李四");
+		varMap.put("userName", names);
+		processEngine.getRuntimeService().startProcessInstanceByKey("SequenceFlow", varMap);
 		System.out.println("启动成功");
 	}
 
@@ -52,7 +64,10 @@ public class SequenceFlowTest {
 				List<Task> tasks = processEngine.getTaskService().createTaskQuery()
 						.processInstanceId(processInstance.getProcessInstanceId()).list();
 				for (Task task : tasks) {
-					valiableMap.put(var, "不是必须");
+					valiableMap.put(var, "必须");
+					valiableMap.put("masterName", "王总");
+					List varMap = (List) processEngine.getTaskService().getVariable(task.getId(), "userName");
+					String v = (String) processEngine.getTaskService().getVariable(task.getId(), "masterName");
 					processEngine.getTaskService().complete(task.getId(), valiableMap);
 				}
 			}
