@@ -19,6 +19,9 @@
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/activiti_demo?useUnicode=true&amp;characterEncoding=utf-8"></property>
 		<property name="jdbcUsername" value="root"></property>
 		<property name="jdbcPassword" value="root"></property>
+		<!--  
+		databaseSchemaUpdate设置为true， Activiti会自动将数据库表升级到新版本， 当发现依赖和数据库表版本不通过时
+		-->
 		<property name="databaseSchemaUpdate" value="true"></property>
 		<property name="ActivityFontName" value="宋体"></property>
 		<property name="labelFontName" value="宋体"></property>
