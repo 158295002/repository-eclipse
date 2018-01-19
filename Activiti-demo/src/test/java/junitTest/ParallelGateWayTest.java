@@ -12,13 +12,14 @@ import org.junit.Test;
 
 /**
  * 并行网关
+ * 
  * @author Administrator
  *
  */
 public class ParallelGateWayTest {
 
 	private ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
-	
+
 	private String proc_def_id = "parallelGateWay";
 
 	@Test
@@ -38,22 +39,22 @@ public class ParallelGateWayTest {
 
 	@Test
 	public void startInstance() {
-//		ProcessDefinition processDefinition = processEngine.getRepositoryService().createProcessDefinitionQuery()
-//				.processDefinitionKey(proc_def_id).latestVersion().singleResult();
-//		String deploymentId = processDefinition.getDeploymentId();
+		// ProcessDefinition processDefinition =
+		// processEngine.getRepositoryService().createProcessDefinitionQuery()
+		// .processDefinitionKey(proc_def_id).latestVersion().singleResult();
+		// String deploymentId = processDefinition.getDeploymentId();
 		processEngine.getRuntimeService().startProcessInstanceByKey(proc_def_id);
 		System.out.println("启动成功");
 	}
 
 	/**
-	 * 并行网关的功能是基于进入和外出的顺序流的：
-分支(fork)： 并行后的所有外出顺序流，为每个顺序流都创建一个并发分支。
-汇聚(join)： 所有到达并行网关，在此等待的进入分支， 直到所有进入顺序流的分支都到达以后， 流程就会通过汇聚网关  如parallelGateWay2
-
-parallelGateWay就自己执行自己的，可提前结束
-
-5）	并行网关不会解析条件。 即使顺序流中定义了条件，也会被忽略。
-
+	 * 并行网关的功能是基于进入和外出的顺序流的： 分支(fork)： 并行后的所有外出顺序流，为每个顺序流都创建一个并发分支。 汇聚(join)：
+	 * 所有到达并行网关，在此等待的进入分支， 直到所有进入顺序流的分支都到达以后， 流程就会通过汇聚网关 如parallelGateWay2
+	 * 
+	 * parallelGateWay就自己执行自己的，可提前结束
+	 * 
+	 * 5） 并行网关不会解析条件。 即使顺序流中定义了条件，也会被忽略。
+	 * 
 	 */
 	@Test
 	public void completeTask() {
@@ -73,10 +74,11 @@ parallelGateWay就自己执行自己的，可提前结束
 		System.out.println("任务完成");
 
 	}
-	
+
 	@Test
-	public void listHis(){
-		List<HistoricProcessInstance>  historicProcessInstances = processEngine.getHistoryService().createHistoricProcessInstanceQuery().processDefinitionKey(proc_def_id).list();
+	public void listHis() {
+		List<HistoricProcessInstance> historicProcessInstances = processEngine.getHistoryService()
+				.createHistoricProcessInstanceQuery().processDefinitionKey(proc_def_id).list();
 		for (HistoricProcessInstance historicProcessInstance : historicProcessInstances) {
 			System.out.println(historicProcessInstance.getEndTime());
 		}
