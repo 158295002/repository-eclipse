@@ -19,7 +19,7 @@ import org.activiti.engine.task.Task;
 import org.junit.Test;
 import org.springframework.util.FileCopyUtils;
 
-public class ProcessDefineTest {
+public class LeaveProcessTest {
 	
 	ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 	
