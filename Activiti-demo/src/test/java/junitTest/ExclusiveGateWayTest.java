@@ -69,7 +69,7 @@ public class ExclusiveGateWayTest {
 //				}
 //			}
 //		}
-		List<Task> tasks = processEngine.getTaskService().createTaskQuery().taskAssignee("ding").list();
+		List<Task> tasks = processEngine.getTaskService().createTaskQuery().processDefinitionKey(proc_def_id).list();
 		LeaveModel leaveModel = new LeaveModel();
 		leaveModel.setName("ding");
 		leaveModel.setLeaveDays(2);
