@@ -5,11 +5,11 @@
     <userTask id="usertask1" name="开启申请通道"></userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
     <parallelGateway id="parallelgateway1" name="Parallel Gateway"></parallelGateway>
-    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="parallelgateway2"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="parallelgateway1"></sequenceFlow>
     <userTask id="usertask2" name="张三申请"></userTask>
-    <sequenceFlow id="flow3" sourceRef="parallelgateway2" targetRef="usertask2"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="parallelgateway1" targetRef="usertask2"></sequenceFlow>
     <userTask id="usertask3" name="李四申请"></userTask>
-    <sequenceFlow id="flow4" sourceRef="parallelgateway2" targetRef="usertask3"></sequenceFlow>
+    <sequenceFlow id="flow4" sourceRef="parallelgateway1" targetRef="usertask3"></sequenceFlow>
     <endEvent id="endevent1" name="End"></endEvent>
     <parallelGateway id="parallelgateway2" name="Parallel Gateway"></parallelGateway>
     <sequenceFlow id="flow5" sourceRef="usertask2" targetRef="parallelgateway2"></sequenceFlow>
@@ -45,15 +45,15 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
         <omgdi:waypoint x="352.0" y="155.0"></omgdi:waypoint>
-        <omgdi:waypoint x="360.0" y="370.0"></omgdi:waypoint>
+        <omgdi:waypoint x="352.0" y="200.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
-        <omgdi:waypoint x="360.0" y="370.0"></omgdi:waypoint>
-        <omgdi:waypoint x="242.0" y="315.0"></omgdi:waypoint>
+        <omgdi:waypoint x="352.0" y="240.0"></omgdi:waypoint>
+        <omgdi:waypoint x="242.0" y="260.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
-        <omgdi:waypoint x="360.0" y="370.0"></omgdi:waypoint>
-        <omgdi:waypoint x="456.0" y="305.0"></omgdi:waypoint>
+        <omgdi:waypoint x="372.0" y="220.0"></omgdi:waypoint>
+        <omgdi:waypoint x="456.0" y="250.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
         <omgdi:waypoint x="295.0" y="287.0"></omgdi:waypoint>

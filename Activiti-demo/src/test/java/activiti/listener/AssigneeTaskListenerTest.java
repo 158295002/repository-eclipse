@@ -64,6 +64,8 @@ public class AssigneeTaskListenerTest {
 				.processDefinitionKey(proc_def_id).singleResult();// 可能返回的不只一个，所以会有报错的可能，要返回单个，需根据流程实例的ID
 		if (pi == null) {
 			System.out.println("流程正常执行！！！，已经结束了");
+		}else {
+			System.out.println("还没结束");
 		}
 
 	}

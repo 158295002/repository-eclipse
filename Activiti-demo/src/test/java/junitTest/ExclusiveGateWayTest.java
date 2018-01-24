@@ -42,7 +42,9 @@ public class ExclusiveGateWayTest {
 //		ProcessDefinition processDefinition = processEngine.getRepositoryService().createProcessDefinitionQuery()
 //				.processDefinitionKey(proc_def_id).latestVersion().singleResult();
 //		String deploymentId = processDefinition.getDeploymentId();
-		processEngine.getRuntimeService().startProcessInstanceByKey(proc_def_id);
+		Map<String,Object> map = new HashMap<>();
+		map.put("name", "ding");
+		processEngine.getRuntimeService().startProcessInstanceByKey(proc_def_id,map);
 		System.out.println("启动成功");
 	}
 
@@ -51,21 +53,33 @@ public class ExclusiveGateWayTest {
 	 */
 	@Test
 	public void completeTask() {
-		List<ProcessInstance> processInstances = processEngine.getRuntimeService().createProcessInstanceQuery()
-				.processDefinitionKey(proc_def_id).list();
-		String var = "day";
-		Map<String, Object> valiableMap = new HashMap<>();
-		if (processInstances != null) {
-			if (processInstances != null && processInstances.size() >= 1) {
-				ProcessInstance processInstance = processInstances.get(0);
-				List<Task> tasks = processEngine.getTaskService().createTaskQuery()
-						.processInstanceId(processInstance.getProcessInstanceId()).list();
-				for (Task task : tasks) {
-					valiableMap.put(var, 2);
-					processEngine.getTaskService().complete(task.getId(), valiableMap);
-				}
-			}
+//		List<ProcessInstance> processInstances = processEngine.getRuntimeService().createProcessInstanceQuery()
+//				.processDefinitionKey(proc_def_id).list();
+//		String var = "day";
+//		Map<String, Object> valiableMap = new HashMap<>();
+//		if (processInstances != null) {
+//			if (processInstances != null && processInstances.size() >= 1) {
+//				ProcessInstance processInstance = processInstances.get(0);
+//				List<Task> tasks = processEngine.getTaskService().createTaskQuery()
+//						.processInstanceId(processInstance.getProcessInstanceId()).list();
+//				for (Task task : tasks) {
+//					valiableMap.put(var, 2);
+//					
+//					processEngine.getTaskService().complete(task.getId(), valiableMap);
+//				}
+//			}
+//		}
+		List<Task> tasks = processEngine.getTaskService().createTaskQuery().taskAssignee("ding").list();
+		LeaveModel leaveModel = new LeaveModel();
+		leaveModel.setName("ding");
+		leaveModel.setLeaveDays(2);
+		leaveModel.setNextAssignee("主管呐");
+		Map<String,Object> varMap = new HashMap<>();
+		varMap.put("leaveModel", leaveModel);
+		for (Task task : tasks) {
+			processEngine.getTaskService().complete(task.getId(), varMap);
 		}
+		
 		System.out.println("任务完成");
 
 	}

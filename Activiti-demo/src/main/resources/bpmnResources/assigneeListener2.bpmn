@@ -8,10 +8,19 @@
       </extensionElements>
     </userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
-    <userTask id="usertask2" name="开始审批"></userTask>
+    <userTask id="usertask2" name="开始审批">
+      <extensionElements>
+        <activiti:taskListener event="create" class="activiti.listener.MasterTaskListener">
+          <activiti:field name="dd">
+            <activiti:string><![CDATA[dd]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>
+      </extensionElements>
+    </userTask>
     <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
     <endEvent id="endevent1" name="End"></endEvent>
     <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="endevent1"></sequenceFlow>
+    <serviceTask id="servicetask1" name="Service Task" activiti:class="activiti.listener.AssigneeTaskListener"></serviceTask>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_AssigneeTaskListener">
     <bpmndi:BPMNPlane bpmnElement="AssigneeTaskListener" id="BPMNPlane_AssigneeTaskListener">
@@ -26,6 +35,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
         <omgdc:Bounds height="35.0" width="35.0" x="540.0" y="160.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="290.0" y="70.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
         <omgdi:waypoint x="195.0" y="177.0"></omgdi:waypoint>
