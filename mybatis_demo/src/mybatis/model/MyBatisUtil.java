@@ -1,6 +1,7 @@
 package mybatis.model;
 
 import java.io.InputStream;
+import java.util.Properties;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,7 +15,14 @@ public class MyBatisUtil {
 		InputStream is = MyBatisUtil.class.getClassLoader().getResourceAsStream(conf);
 		//　　　　构建sqlSession的工厂
 		SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-		SqlSessionFactory factory = builder.build(is);
+		Properties properties = new Properties();
+        properties.setProperty("jdbc.driver", "com.mysql.jdbc.Driver");
+        properties.setProperty(
+                "jdbc.url",
+                "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");     
+        properties.setProperty("jdbc.username", "root");
+        properties.setProperty("jdbc.password", "root");
+		SqlSessionFactory factory = builder.build(is,properties);
 		SqlSession session = factory.openSession();
 		return session;
 	}
