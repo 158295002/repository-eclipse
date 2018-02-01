@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为mapper指定唯一的namespace，通常设置成包名+sql映射的文件名 -->
+<mapper namespace="mybatis.model.userMapper">
+	<!-- 在select/insert/delete标签中编写SQL语句； 设置唯一的id属性，将来SqlSession通过id调用sql语句； 
+		parameterType指明查询时使用的参数类型。如果参数只有1个则用简单类型，参数为多个时可用Map集合或实体对象，占位符用对象的属性名； resultType表示查询结果将要封装成的实体类，也可以为Map类型或基本类型 -->
+	<select id="getUserByID" parameterType="int" resultType="mybatis.model.User">
+		select * from table_b where id=#{propertyName}
+	</select>
+	
+</mapper>
