@@ -8,4 +8,16 @@
 		select * from table_b where id=#{propertyName}
 	</select>
 	
+	<select id="getUserById" parameterType="int" resultType="java.util.HashMap">
+		select * from table_b where id=#{propertyName}
+	</select>
+	<select id="selectAllTableByschema" resultType="java.util.HashMap">
+SELECT * FROM information_schema.TABLES  WHERE table_schema = 'test' 
+
+</select>
+
+<select id="selectAllTableByschemas" parameterType="String"
+		resultType="java.util.HashMap">
+		SELECT * FROM information_schema.TABLES WHERE table_schema = #{table_schema}
+	</select>
 </mapper>
