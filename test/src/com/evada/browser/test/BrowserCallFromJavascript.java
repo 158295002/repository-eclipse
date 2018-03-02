@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * @author dingqin
- * @date 2018Äê1ÔÂ11ÈÕ
+ * 2018å¹´3æœˆ2æ—¥
  *
  */
 public class BrowserCallFromJavascript {
@@ -28,9 +28,9 @@ public class BrowserCallFromJavascript {
 		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLayout(new GridLayout(2, true));
-		shell.setText("´Ójavaµ÷ÓÃjavascript");
+		shell.setText("ï¿½ï¿½javaï¿½ï¿½ï¿½ï¿½javascript");
 		Button btn = new Button(shell, SWT.None);
-		btn.setText("µ÷ÓÃjavascript");
+		btn.setText("ï¿½ï¿½ï¿½ï¿½javascript");
 		btn.addListener(SWT.Selection, evt -> btnListener());
 		try {
 			browser = new Browser(shell, SWT.BORDER);
@@ -40,7 +40,7 @@ public class BrowserCallFromJavascript {
 		}
 		browser.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true, 2, 1));
 
-		// //´ÓÖ¸¶¨ÍøÖ·»ñÈ¡html£¬½«html¼ÓÔØµ½ä¯ÀÀÆ÷ÖÐ
+		// //ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½È¡htmlï¿½ï¿½ï¿½ï¿½htmlï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 String url="http://dict.youdao.com/";
 		 browser.setText(fetchHtml(url, "utf-8"));
 		shell.setSize(1200, 1200);
@@ -57,12 +57,12 @@ public class BrowserCallFromJavascript {
 	}
 
 	/** 
-	 * ×¥È¡Ä³¸öÍøÒ³µÄÔ´´úÂë 
+	 * ×¥È¡Ä³ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ 
 	 *  
 	 * @param urlstr 
-	 *            Òª×¥È¡ÍøÒ³µÄµØÖ· 
+	 *            Òª×¥È¡ï¿½ï¿½Ò³ï¿½Äµï¿½Ö· 
 	 * @param charset 
-	 *            ÍøÒ³ËùÊ¹ÓÃµÄ±àÂë Èç"utf-8","gbk" 
+	 *            ï¿½ï¿½Ò³ï¿½ï¿½Ê¹ï¿½ÃµÄ±ï¿½ï¿½ï¿½ ï¿½ï¿½"utf-8","gbk" 
 	 * @return 
 	 * @throws IOException 
 	 */

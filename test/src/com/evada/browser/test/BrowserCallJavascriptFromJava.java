@@ -12,7 +12,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * @author dingqin
- * @date 2018Äê1ÔÂ11ÈÕ
+ * 2018å¹´3æœˆ2æ—¥
  *
  */
 public class BrowserCallJavascriptFromJava {
@@ -89,7 +89,7 @@ public class BrowserCallJavascriptFromJava {
 		buffer.append("</script>\n");
 		buffer.append("</head>\n");
 		buffer.append("<body>\n");
-		buffer.append("<input id=button type=\"button\" value=\"µ÷ÓÃjava·½·¨\" onclick=\"function1();\">\n");
+		buffer.append("<input id=button type=\"button\" value=\"ï¿½ï¿½ï¿½ï¿½javaï¿½ï¿½ï¿½ï¿½\" onclick=\"function1();\">\n");
 		buffer.append("<p><a href=\"http://www.eclipse.org\">go to eclipse.org</a>\n");
 		buffer.append("</body>\n");
 		buffer.append("</html>\n");

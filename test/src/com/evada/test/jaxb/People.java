@@ -22,7 +22,7 @@ public class People {
 	public String id = "001";
 
 	@XmlAttribute(name = "name")
-	public String name = "»ÒÌ«ÀÇ";
+	public String name = "dd";
 
 	@XmlAttribute(name = "age")
 	public int age = 26;
@@ -38,12 +38,12 @@ public class People {
 		shaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		People people = new People();
 		shaller.marshal(people, new File("C:\\Users\\Administrator\\Desktop\\test.txt"));
-		System.out.println("×ª»»³ÉXML³É¹¦");
+		System.out.println("æŒä¹…åŒ–æˆåŠŸ");
 		// XML2Java
 		Unmarshaller unShaller = context.createUnmarshaller();
 		People p = (People) unShaller.unmarshal(new File("C:\\Users\\Administrator\\Desktop\\test.txt"));
 		System.out.println(p.chid.code);
-		System.out.println("×ª»»³É¶ÔÏó³É¹¦");
+		System.out.println("è§£ææˆåŠŸ");
 	}
 
 	private static class child {
