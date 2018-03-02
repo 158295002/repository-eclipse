@@ -28,9 +28,9 @@ public class BrowserCallFromJavascript {
 		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLayout(new GridLayout(2, true));
-		shell.setText("��java����javascript");
+		shell.setText("从java调用javascript");
 		Button btn = new Button(shell, SWT.None);
-		btn.setText("����javascript");
+		btn.setText("调用javascript");
 		btn.addListener(SWT.Selection, evt -> btnListener());
 		try {
 			browser = new Browser(shell, SWT.BORDER);
@@ -40,7 +40,6 @@ public class BrowserCallFromJavascript {
 		}
 		browser.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true, 2, 1));
 
-		// //��ָ����ַ��ȡhtml����html���ص��������
 		 String url="http://dict.youdao.com/";
 		 browser.setText(fetchHtml(url, "utf-8"));
 		shell.setSize(1200, 1200);
@@ -56,15 +55,11 @@ public class BrowserCallFromJavascript {
 		browser.execute("alert(\"JavaScript, called from Java\");");
 	}
 
-	/** 
-	 * ץȡĳ����ҳ��Դ���� 
-	 *  
-	 * @param urlstr 
-	 *            Ҫץȡ��ҳ�ĵ�ַ 
-	 * @param charset 
-	 *            ��ҳ��ʹ�õı��� ��"utf-8","gbk" 
-	 * @return 
-	 * @throws IOException 
+	/**
+	 * @param urlstr
+	 * @param charset
+	 * @return
+	 * @throws IOException
 	 */
 	public static String fetchHtml(String urlstr, String charset) throws IOException {
 		URL url = new URL(urlstr);
