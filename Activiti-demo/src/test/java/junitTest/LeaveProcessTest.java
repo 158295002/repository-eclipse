@@ -24,7 +24,7 @@ public class LeaveProcessTest {
 	ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 	
 	/**
-	 * ²¿ÊğÁ÷³Ì¶¨Òå
+	 * æµç¨‹å‘å¸ƒ
 	 */
 	@Test
 	public void deployProcess() {
@@ -34,10 +34,10 @@ public class LeaveProcessTest {
 		Deployment deployment = repositoryService
 		.createDeployment()
 		.name("first3 deployment")
-		//·½Ê½1
+		//ï¿½ï¿½Ê½1
 		.addClasspathResource("diagrams/leaveProcess.bpmn")
 		.addClasspathResource("diagrams/leaveProcess.png")
-		//·½Ê½2
+		//ï¿½ï¿½Ê½2
 //		.addZipInputStream(zipInputStream)
 		.deploy();
 		String sdate = formatDate(deployment);
@@ -47,7 +47,7 @@ public class LeaveProcessTest {
 
 	protected String formatDate(Deployment deployment) {
 		Date date = deployment.getDeploymentTime();
-		DateFormat format = new SimpleDateFormat("yyyyÄêmmÔÂddÈÕ:hh:mm:ss");
+		DateFormat format = new SimpleDateFormat("yyyyå¹´mmæœˆddæ—¥:hh:mm:ss");
 		String sdate = format.format(date);
 		return sdate;
 	}
@@ -65,7 +65,7 @@ public class LeaveProcessTest {
 	}
 	
 	/**
-	 * Á÷³ÌÊµÀı²âÊÔ
+	 * æµç¨‹å¯åŠ¨
 	 */
 	@Test
 	public void processInstanceTest() {
@@ -93,13 +93,13 @@ public class LeaveProcessTest {
 	
 	@Test
 	public void saveImage(){
-		 /**½«Éú³ÉÍ¼Æ¬·Åµ½ÎÄ¼ş¼ĞÏÂ*/
+		 /**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Åµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½*/
         String deploymentId = "1";
-        //»ñÈ¡Í¼Æ¬×ÊÔ´Ãû³Æ
+        //ï¿½ï¿½È¡Í¼Æ¬ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½
         List<String> list = processEngine.getRepositoryService()//
                         .getDeploymentResourceNames(deploymentId);
         
-        //¶¨ÒåÍ¼Æ¬×ÊÔ´µÄÃû³Æ
+        //ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         String resourceName = "";
         if(list!=null && list.size()>0){
             for(String name:list){
@@ -110,10 +110,10 @@ public class LeaveProcessTest {
         }
         
         
-        //»ñÈ¡Í¼Æ¬µÄÊäÈëÁ÷
+        //ï¿½ï¿½È¡Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         InputStream in = processEngine.getRepositoryService()//
                         .getResourceAsStream(deploymentId, resourceName);
-        //½«Í¼Æ¬Éú³Éµ½CÅÌµÄÄ¿Â¼ÏÂ
+        //ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½Éµï¿½Cï¿½Ìµï¿½Ä¿Â¼ï¿½ï¿½
         File file = new File("C:\\Users\\Administrator\\Desktop\\test\\"+resourceName);
         try {
 			FileCopyUtils.copy(in, new FileOutputStream(file));
@@ -121,7 +121,7 @@ public class LeaveProcessTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        System.out.println("µ¼³ö³É¹¦");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 	}
 	
 
