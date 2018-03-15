@@ -12,6 +12,7 @@ public class BroswerTest extends Composite {
 
 	public BroswerTest(Composite parent, int style) {
 		super(parent, style);
+//		System.setProperty("org.eclipse.swt.browser.XULRunnerPath", "C:\\Program Files (x86)\\xulrunner");
 		GridLayout layout = new GridLayout();
 		layout.numColumns = 1;
 		this.setLayout(layout);
