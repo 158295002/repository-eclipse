@@ -18,7 +18,7 @@ public class BroswerTest extends Composite {
 		GridData data = new GridData(GridData.FILL_BOTH);
 		this.setLayoutData(data);
 		Browser browser = new Browser(this, SWT.BORDER);
-		browser.setText("°Ù¶ÈËÑË÷");
+		browser.setText("browser");
 		browser.setUrl("http://www.baidu.com");
 		browser.setLayoutData(data);
 	}
