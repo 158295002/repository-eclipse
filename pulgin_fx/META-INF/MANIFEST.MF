@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pulgin_fx
+Bundle-SymbolicName: pulgin_fx;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: pulgin_fx.Activator
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime,
+  org.eclipse.fx.ui.workbench3
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
